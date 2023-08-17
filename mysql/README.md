@@ -128,7 +128,7 @@ You can manage the container in the `before(:suite)` / `after(:suite)` blocks in
 ```ruby
 RSpec.configure do |config|
   # This helps us to have access to the `RSpec.configuration.mysql_container` without using global variables.
-  config.add_setting :mysql, default: nil
+  config.add_setting :mysql_container, default: nil
 
   config.before(:suite) do
     config.mysql_container = Testcontainers::MysqlContainer.new.start
